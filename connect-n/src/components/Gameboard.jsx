@@ -157,7 +157,7 @@ function Gameboard() {
         <>
             <Settings numCols={numCols} numRows={numRows} numConnections={numConnections} showSettings={showSettings}
                 setNumConnections={setNumConnections} setNumCols={setNumCols} setNumRows={setNumRows} />
-            <img className="settings-gear" src="/gear.png" alt="Settings" onClick={() => setShowSettings(prev => !prev)} />
+            <img className="settings-gear" src="/connect-n/gear.png" alt="Settings" onClick={() => setShowSettings(prev => !prev)} />
 
             {winner === 'red' && <div className="result red"><span>Red</span> Wins!</div>}
             {winner === 'yellow' && <div className="result yellow"><span>Yellow</span> Wins!</div>}
