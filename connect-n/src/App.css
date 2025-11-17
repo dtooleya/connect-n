@@ -1,0 +1,188 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-color: black;
+  --button-text: white;
+  --wrong-color: #787C7E;
+}
+
+.dark-mode {
+  --background-color: #333;
+  --text-color: white;
+  --button-color: rgb(255, 255, 255);
+  --button-text: rgb(0, 0, 0);
+  --wrong-color: #3a3a3C;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode-btn {
+  position: absolute;
+  right: 80px;
+  top: 20px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  color: var(--button-text);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: var(--button-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-board {
+  padding: 20px;
+  background-color: rgb(82, 82, 255);
+}
+
+.row {
+  display: flex;
+}
+
+.hole {
+  background-color: var(--background-color);
+  border-radius: 25px;
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hole.red {
+  background-color: red;
+}
+
+.hole.yellow {
+  background-color: yellow;
+}
+
+.playable-space {
+  border-radius: 25px;
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  border: 1px solid var(--text-color);
+}
+
+.red-turn:hover {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.yellow-turn:hover {
+  background-color: yellow;
+  border: 1px solid yellow;
+}
+
+.setting-panel {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  color: white !important;
+  transition: right 0.3s ease;
+}
+
+.setting-panel.disabled{
+  right: -300px;
+}
+
+.setting-panel label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.counter {
+  display: flex;
+}
+
+.counter-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px 5px 5px;
+  margin: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.counter-input {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px 5px 5px;
+  margin: 5px;
+}
+
+.result.red span {
+  color: red;
+}
+
+.result.yellow span {
+  color: yellow;
+}
+
+.result {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.reset-btn {
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.reset-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color)
+}
+
+.settings-gear {
+  position: fixed;
+  right: 20px;
+  top: 25px;
+  width: 40px;
+  height: 40px;
+}
+
+.settings-gear:hover {
+  animation: spin 1s ease forwards;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
